@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimercado - Fundamentos Web</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header class="container-fluid" style="padding-bottom: 0">
+      <div class="row align-items-center">
+        <!-- Logo -->
+        <div class="col-2" style="height: 200px">
+          <img
+            src="../assets/logo.svg"
+            alt="Logo Minimercado"
+            class="img-fluid"
+          />
+        </div>
+
+        <div class="col-10">
+          <h1>Minimercado Fundamentos Web</h1>
+          <p class="slogan">A melhor qualidade para sua casa!</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Nav (Menu) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navBarHigiene"
+          aria-controls="navBarHigiene"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navBarHigiene">
+          <ul class="navbar-nav">
+            <!-- Link para Homepage -->
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Página inicial</a>
+            </li>
+
+            <!-- Link para Área do Cliente -->
+            <li class="nav-item">
+              <a class="nav-link" href="#">Área do Cliente</a>
+            </li>
+
+            <!-- Dropdown para Categorias -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Categorias
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="categorias/frutas-verduras.html"
+                  >Frutas e Verduras</a
+                >
+                <a class="dropdown-item" href="#">Alimentos Não Perecíveis</a>
+                <a class="dropdown-item" href="#">Produtos de Limpeza</a>
+              </div>
+            </li>
+
+            <!-- Link para Agendamento de Serviços -->
+            <li class="nav-item">
+              <a class="nav-link" href="../agendar.html">Agendar Serviço</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="container mt-4">
+      <h2>Alimentos Não Perecíveis</h2>
+      <div class="row p-2">
+        <!-- Produto 1: Sabonete -->
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="../assets/sabonete.png"
+              class="card-img-top"
+              alt="Sabonete"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Sabonete</h5>
+              <p class="card-text">
+                Sabonete de barra suave, ideal para a limpeza diária da pele.
+                Proporciona uma sensação de frescor e suavidade, deixando a pele
+                limpa e hidratada. Perfeito para todos os tipos de pele.
+              </p>
+              <p><b>R$ 3,99/uni</b></p>
+              <button class="btn btn-outline-primary">Ver produto</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produto 2: Shampoo -->
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="../assets/shampoo.png"
+              class="card-img-top"
+              alt="Shampoo"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Shampoo</h5>
+              <p class="card-text">
+                Shampoo eficaz no combate à caspa, ajudando a prevenir a
+                descamação e a coceira do couro cabeludo. Proporciona uma
+                sensação de frescor e alívio, deixando os cabelos limpos e
+                saudáveis.
+              </p>
+              <p><b>R$ 10,99/uni</b></p>
+              <button class="btn btn-outline-primary">Ver produto</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3">
+      <div class="container">
+        <div class="row">
+          <!-- Informações da Empresa -->
+          <div class="col-md-4">
+            <h5>Minimercado Fundamentos Web</h5>
+            <p>&copy; 2025 - Todos os direitos reservados.</p>
+          </div>
+
+          <!-- Links de Navegação -->
+          <div class="col-md-4">
+            <h5>Links Rápidos</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Área do Cliente</a></li>
+              <li><a href="#" class="text-white">Categorias</a></li>
+              <li><a href="#" class="text-white">Agendar Serviço</a></li>
+            </ul>
+          </div>
+
+          <!-- Contato -->
+          <div class="col-md-4">
+            <h5>Contato</h5>
+            <p>Email: contato@minimercado.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  </body>
+</html>

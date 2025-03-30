@@ -1,0 +1,103 @@
+/* Estilos Gerais */
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+/* Estilos para o conteúdo principal */
+main {
+  flex: 1;
+}
+
+/* Estilos para o Header */
+header {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+header .slogan {
+  font-style: italic;
+}
+
+header .btn {
+  width: 200px;
+}
+
+/* Estilos para o Nav (Navbar) */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link {
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #0056b3;
+}
+
+img {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#produtoCarrossel {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px 0;
+}
+
+.carousel-inner img {
+  height: 300px !important;
+  object-fit: contain;
+}
+
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-caption p {
+  color: #000;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  filter: invert(100%);
+}
+
+h5 {
+  color: #000;
+}
+
+/* Estilos para o Footer */
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 20px 0;
+  margin-top: auto;
+}
+
+footer .container {
+  max-width: 960px;
+}
+
+footer h5 {
+  font-size: 1.2rem;
+}
+
+footer ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+footer ul li {
+  margin: 5px 0;
+}

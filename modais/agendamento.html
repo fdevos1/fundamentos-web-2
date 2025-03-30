@@ -1,0 +1,262 @@
+<div
+  class="modal fade"
+  id="dadosPessoaisModal"
+  tabindex="-1"
+  aria-labelledby="dadosPessoaisModalLabel"
+  aria-hidden="true"
+  role="dialog"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dadosPessoaisModalLabel">
+          Formulário de Dados Pessoais
+        </h5>
+        <button
+          type="button"
+          class="btn btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Fechar"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="agendamentoForm">
+          <!-- Etapa 1: Escolha de Data e Hora -->
+          <div id="etapa1">
+            <div class="mb-3">
+              <label for="data" class="form-label">Selecione a Data:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="data"
+                name="data"
+                placeholder="Escolha uma data"
+                required
+                aria-required="true"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="hora" class="form-label">Escolha o Horário:</label>
+              <input
+                type="time"
+                class="form-control"
+                id="hora"
+                name="hora"
+                required
+                aria-required="true"
+              />
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="btnProxima"
+              aria-label="Avançar para os dados pessoais"
+            >
+              Próximo
+            </button>
+          </div>
+          <!-- Etapa 2: Dados Pessoais -->
+          <div id="etapa2" style="display: none">
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nome"
+                name="nome"
+                placeholder="Digite seu nome"
+                required
+                aria-required="true"
+              />
+              <span class="error" id="nomeError" role="alert"></span>
+            </div>
+            <div class="mb-3">
+              <fieldset>
+                <legend class="form-label">Serviço:</legend>
+                <input
+                  type="radio"
+                  id="retirar"
+                  name="servico"
+                  value="Retirar"
+                  aria-label="Retirar"
+                />
+                <label for="retirar">Retirar</label>
+                <input
+                  type="radio"
+                  id="tele-entrega"
+                  name="servico"
+                  value="Tele-entrega"
+                  aria-label="Tele-entrega"
+                />
+                <label for="tele-entrega">Tele-entrega</label>
+              </fieldset>
+            </div>
+            <div class="mb-3" id="endereco-container" style="display: none">
+              <label for="endereco" class="form-label">Endereço:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="endereco"
+                name="endereco"
+                placeholder="Digite seu endereço"
+                required
+                aria-required="true"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="cpf" class="form-label">CPF:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="cpf"
+                name="cpf"
+                placeholder="000.000.000-00"
+                required
+                aria-required="true"
+              />
+              <span class="error" id="cpfError" role="alert"></span>
+            </div>
+            <div class="mb-3">
+              <fieldset>
+                <legend class="form-label">Sexo:</legend>
+                <input
+                  type="radio"
+                  id="masculino"
+                  name="sexo"
+                  value="Masculino"
+                  aria-label="Masculino"
+                />
+                <label for="masculino">Masculino</label>
+                <input
+                  type="radio"
+                  id="feminino"
+                  name="sexo"
+                  value="Feminino"
+                  aria-label="Feminino"
+                />
+                <label for="feminino">Feminino</label>
+              </fieldset>
+            </div>
+            <div class="mb-3">
+              <label for="telefone" class="form-label">Telefone:</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="telefone"
+                name="telefone"
+                placeholder="(00) 00000-0000"
+                required
+                aria-required="true"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">E-mail:</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Digite seu e-mail"
+                required
+                aria-required="true"
+              />
+              <span class="error" id="emailError" role="alert"></span>
+            </div>
+            <div class="mb-3">
+              <label for="idade" class="form-label">Idade:</label>
+              <input
+                type="number"
+                class="form-control"
+                id="idade"
+                name="idade"
+                min="1"
+                max="120"
+                required
+                aria-required="true"
+              />
+            </div>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="btnVoltar"
+              aria-label="Voltar para a etapa anterior"
+            >
+              Voltar
+            </button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    // Ativar DatePicker no campo de data
+    $("#data").datepicker({
+      dateFormat: "dd/mm/yy",
+      minDate: 0, // Impede datas passadas
+    });
+
+    // Navegar para a segunda etapa
+    $("#btnProxima").click(function () {
+      if ($("#data").val() === "" || $("#hora").val() === "") {
+        alert("Por favor, selecione uma data e horário!");
+        return;
+      }
+      $("#etapa1").hide();
+      $("#etapa2").fadeIn();
+      $("#etapa2").css("padding", "0 20px 10px");
+    });
+
+    // Voltar para a primeira etapa
+    $("#btnVoltar").click(function () {
+      $("#etapa2").hide();
+      $("#etapa1").fadeIn();
+    });
+
+    // Mostrar endereço apenas se "Tele-entrega" for selecionado
+    $('input[name="servico"]').change(function () {
+      if ($(this).val() === "Tele-entrega") {
+        $("#endereco-container").show();
+      } else {
+        $("#endereco-container").hide();
+      }
+    });
+
+    // Validação do formulário ao enviar
+    $("#agendamentoForm").submit(function (event) {
+      let valid = true;
+
+      if ($("#nome").val().trim() === "") {
+        $("#nomeError").text("Nome é obrigatório.");
+        valid = false;
+      } else {
+        $("#nomeError").text("");
+      }
+
+      let cpfPattern = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+      if (!cpfPattern.test($("#cpf").val())) {
+        $("#cpfError").text("CPF inválido. Use o formato 000.000.000-00");
+        valid = false;
+      } else {
+        $("#cpfError").text("");
+      }
+
+      let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test($("#email").val())) {
+        $("#emailError").text("E-mail inválido.");
+        valid = false;
+      } else {
+        $("#emailError").text("");
+      }
+
+      if (!valid) {
+        event.preventDefault();
+      }
+    });
+  });
+</script>

@@ -1,0 +1,177 @@
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimercado - Fundamentos Web</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header
+      class="container-fluid"
+      style="padding-bottom: 0"
+      aria-label="Cabeçalho do site"
+    >
+      <div class="row align-items-center">
+        <!-- Logo -->
+        <div class="col-2" style="height: 200px">
+          <img
+            src="assets/logo.svg"
+            alt="Logo do Minimercado Fundamentos Web"
+            class="img-fluid"
+          />
+        </div>
+
+        <div class="col-10">
+          <h1>Minimercado Fundamentos Web</h1>
+          <p class="slogan">A melhor qualidade para sua casa!</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Nav (Menu) -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light"
+      aria-label="Menu de navegação principal"
+    >
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navBarNaoPerecivel"
+          aria-controls="navBarNaoPerecivel"
+          aria-expanded="false"
+          aria-label="Alternar navegação"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navBarNaoPerecivel">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html" aria-current="page"
+                >Página inicial</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Área do Cliente</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Categorias
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="categorias/frutas-verduras.html"
+                  >Frutas e Verduras</a
+                >
+                <a class="dropdown-item" href="#">Alimentos Não Perecíveis</a>
+                <a class="dropdown-item" href="#">Produtos de Limpeza</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../agendar.html">Agendar Serviço</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Seção de Serviços Oferecidos -->
+    <section class="container my-4" aria-labelledby="servicosOferecidos">
+      <h2 id="servicosOferecidos">Serviços Oferecidos</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Retirada no Local</h5>
+              <p class="card-text">
+                Serviço de retirada diretamente em nosso minimercado...
+              </p>
+              <p><b>Valor: R$ 0,00</b></p>
+              <button
+                class="btn btn-outline-primary"
+                data-toggle="modal"
+                data-target="#dadosPessoaisModal"
+                aria-label="Agendar serviço de Retirada no Local"
+              >
+                Agendar serviço
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Tele-entrega</h5>
+              <p class="card-text">
+                Serviço de entrega rápida e segura na sua casa...
+              </p>
+              <p><b>Valor: R$ 9,99</b></p>
+              <button
+                class="btn btn-outline-primary"
+                data-toggle="modal"
+                data-target="#dadosPessoaisModal"
+                aria-label="Agendar serviço de Tele-entrega"
+              >
+                Agendar serviço
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3" aria-label="Rodapé">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Minimercado Fundamentos Web</h5>
+            <p>&copy; 2025 - Todos os direitos reservados.</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Links Rápidos</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Área do Cliente</a></li>
+              <li><a href="#" class="text-white">Categorias</a></li>
+              <li><a href="#" class="text-white">Agendar Serviço</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Contato</h5>
+            <p>Email: contato@minimercado.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="modalContainer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#modalContainer").load("modais/agendamento.html");
+      });
+    </script>
+  </body>
+</html>

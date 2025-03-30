@@ -1,0 +1,191 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimercado - Fundamentos Web</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header class="container-fluid" style="padding-bottom: 0">
+      <div class="row align-items-center">
+        <!-- Logo -->
+        <div class="col-2" style="height: 200px">
+          <img
+            src="assets/logo.svg"
+            alt="Logo do Minimercado"
+            class="img-fluid"
+          />
+        </div>
+
+        <div class="col-10">
+          <h1>Minimercado Fundamentos Web</h1>
+          <p class="slogan">A melhor qualidade para sua casa!</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Nav (Menu) -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light"
+      aria-label="Menu de navegação principal"
+    >
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Alternar navegação"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html" aria-current="page"
+                >Página inicial</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Área do Cliente</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Categorias
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="categorias/frutas-verduras.html"
+                  >Frutas e Verduras</a
+                >
+                <a class="dropdown-item" href="categorias/nao_pereciveis.html"
+                  >Alimentos Não Perecíveis</a
+                >
+                <a class="dropdown-item" href="categorias/higiene.html"
+                  >Produtos de Higiene e Limpeza</a
+                >
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="agendar.html">Agendar Serviço</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carrossel de Produtos -->
+    <section
+      class="container mt-2"
+      aria-label="Carrossel de produtos mais vendidos"
+    >
+      <div id="produtoCarrossel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" style="height: 500px">
+          <div class="carousel-item active">
+            <img
+              class="d-block"
+              src="assets/maca.png"
+              alt="Maçã fresca e crocante"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <button class="btn btn-outline-primary my-2">Ver produto</button>
+              <h5>Maçã</h5>
+              <p>
+                <b>R$ 5,99/kg</b> - Maçã fresca e crocante, ideal para seu
+                lanche!
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block"
+              src="assets/feijao.png"
+              alt="Feijão para refeições"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <button class="btn btn-outline-primary my-2">Ver produto</button>
+              <h5>Feijão</h5>
+              <p><b>R$ 7,50/kg</b> - Feijão, excelente para suas refeições!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block"
+              src="assets/sabao_em_po.png"
+              alt="Sabão em pó para lavagem de roupas"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <button class="btn btn-outline-primary my-2">Ver produto</button>
+              <h5>Sabão em pó</h5>
+              <p>
+                <b>R$ 8,99/500g</b> - Sabão em pó para lavar suas roupas com
+                mais eficiência.
+              </p>
+            </div>
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#produtoCarrossel"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#produtoCarrossel"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Próximo</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Minimercado Fundamentos Web</h5>
+            <p>&copy; 2025 - Todos os direitos reservados.</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Links Rápidos</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Área do Cliente</a></li>
+              <li><a href="#" class="text-white">Categorias</a></li>
+              <li><a href="#" class="text-white">Agendar Serviço</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Contato</h5>
+            <p>Email: contato@minimercado.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
